@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { DbProvider } from './contexts/DbContext';
-import Home from './pages/Home';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Dashboard from './pages/Dashboard'
@@ -13,7 +12,6 @@ function App() {
       <AuthProvider>
         <DbProvider>
           <Routes>
-            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route
