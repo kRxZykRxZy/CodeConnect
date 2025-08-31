@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { DbProvider } from './contexts/DbContext';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Dashboard from './pages/Dashboard';
-import NotFound from './pages/NotFound';
-import PrivateRoute from './routes/PrivateRoute';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
@@ -21,12 +19,9 @@ function App() {
             <Route
               path="/dashboard"
               element={
-                <PrivateRoute>
                   <Dashboard />
-                </PrivateRoute>
               }
             />
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </DbProvider>
       </AuthProvider>
